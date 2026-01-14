@@ -1,7 +1,22 @@
 # 🤖 AAIDC Module 3 – Production-Ready Agentic AI System (Gemini 2.5 Flash)
 
 ## 📌 Overview
-This project is the **final capstone (Project 3)** of the **Agentic AI Developer Certification (AAIDC)** by Ready Tensor.
+his project demonstrates a **production-ready agentic AI system** built as part of the Agentic AI Developer Certification (AAIDC) – Module 3. The system uses a multi-agent architecture orchestrated via LangGraph and exposes a user-friendly interface using Streamlit.
+
+The focus of this module is **reliability, resilience, observability, and testability**, preparing the system for real-world usage.
+
+---
+
+## Key Features
+- Multi-agent orchestration with LangGraph
+- Streamlit-based interactive UI
+- Retry logic with exponential backoff
+- Structured logging for observability
+- Health checks and error handling
+- Unit, integration, and end-to-end testing
+- Secure environment configuration
+
+---
 
 It demonstrates a **production-ready Agentic AI system** that builds upon the multi-agent architecture developed in Module 2 and enhances it with real-world engineering practices such as:
 
@@ -37,7 +52,14 @@ Structured Results Displayed in UI
 
 ---
 
-## 🧩 Agents & Responsibilities
+## Agents and Responsibilities
+
+| Agent | Responsibility |
+|------|----------------|
+| Repository Analyzer Agent | Extracts and analyzes repository content |
+| Metadata / Processing Agent | Performs LLM-based reasoning and enrichment |
+| Reviewer Agent | Validates outputs and checks completeness |
+| Orchestrator (LangGraph) | Controls agent flow and shared state |
 
 ### 1️⃣ Repo Analyzer Agent
 - Reads and prepares README or project description
@@ -75,16 +97,25 @@ A **Streamlit-based UI** allows users to paste README content, trigger analysis,
 
 ---
 
-## 📊 Logging & Operational Resilience
-- Application-wide logging
-- Workflow execution and error tracking
+## 📊 Logging and Monitoring
+Structured logging is enabled across agents and workflows to support:
+- Debugging
+- Execution traceability
+- Error diagnosis
+
+Logs include timestamps, severity levels, and component names.
 
 ---
 
 ## 🧪 Testing
-Includes tool-level and agent-level tests.
 
-Run tests:
+The project includes a structured testing suite:
+
+- **Unit Tests**: Validate individual agents and utilities
+- **Integration Tests**: Validate multi-agent workflows
+- **End-to-End Tests**: Simulate full user interaction flow
+
+Run tests using:
 ```bash
 pytest
 ```
@@ -131,6 +162,29 @@ AAIDC-Module3-Production-Agentic-System/
 - Single LLM-powered agent
 - No persistent memory
 - No external data ingestion
+  
+## Troubleshooting
+
+- **API errors**: Verify API keys and rate limits
+- **Empty outputs**: Ensure valid input format
+- **Streamlit not loading**: Check dependencies and Python version
+- **Test failures**: Confirm environment setup matches requirements
+---
+
+## Deployment
+
+The application can be deployed locally or on platforms supporting Streamlit, such as:
+- Streamlit Cloud
+- Docker-based environments (optional)
+
+Ensure environment variables are configured correctly in deployment environments.
+
+---
+
+## Security Considerations
+- Secrets are managed via environment variables
+- Sensitive files are excluded using `.gitignore`
+- No credentials are hardcoded
 
 ---
 
@@ -147,4 +201,4 @@ This project fulfills **AAIDC Module 3 requirements** by demonstrating a product
 ---
 
 ## 📄 License
-Educational use only for Ready Tensor AAIDC.
+This project is licensed under the **MIT License**. See the LICENSE file for details.
