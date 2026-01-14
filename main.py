@@ -1,5 +1,6 @@
 from graph.workflow import build_graph
-from utils.logger import setup_logger
+from utils.logging_config import setup_logging
+setup_logging()
 
 logger = setup_logger()
 
